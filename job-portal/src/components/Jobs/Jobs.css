@@ -1,0 +1,130 @@
+
+div {
+  font-family: Arial, sans-serif; 
+}
+.Search {
+  margin-bottom: 2rem; 
+}
+.job-card{
+  cursor: pointer;
+}
+.job-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 3% 18%;
+  width: 80%;
+}
+
+.Jobs_mainPage {
+  background-color: #ffffff; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  overflow: hidden; 
+  width: 100%; 
+  max-width: 300px; 
+}
+
+.job-card-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.company-logo {
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%; 
+  margin-right: 1rem; 
+}
+
+
+.job-details {
+  flex: 1;
+}
+
+
+.job-title {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333; 
+}
+
+.company-name {
+  font-size: 0.9rem;
+  color: #666; 
+  margin: 2px;
+}
+
+
+.job-card-body {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Location and salary styling */
+.location,
+.salary {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #444; 
+}
+
+
+.applysec {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f9f9f9; 
+  border-top: 1px solid #eee; 
+}
+
+.aply,
+.detail {
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+
+.aply {
+  background-color: #4CAF50; 
+  color: white; 
+  border: none;}
+
+
+.aply:hover {
+  background-color: #45a049; 
+}
+
+.detail {
+  background-color: #2196F3; 
+  color: white; 
+  border: none;
+}
+
+.detail:hover {
+  background-color: #1976D2; 
+}
+
+.date_save {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee; /* Light border for separation */
+}
+
+
+.save_icon img {
+  width: 18px;
+}
+
+
+.date span {
+  font-size: 0.8rem;
+  color: #888;
+}

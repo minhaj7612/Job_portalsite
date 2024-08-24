@@ -1,0 +1,103 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+  }
+  
+
+  .App {
+    height: 100vh;
+  }
+  
+
+  .home-container {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .headinghome {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #444;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .headinpara{
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .rightBar{
+    width: 50%;
+  }
+  .rightBar .imgside img{
+    width:100%;
+  }
+  
+
+  .job_cont{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .job_contmap {
+    background: #e9ecef;
+    margin: 10px 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+  }
+  .hometopdv{
+    display: flex;
+   }
+  .hometopdv2{
+    width: 50%;
+    padding:45px 15px;
+    margin-bottom:50px,
+  }
+  
+  @media screen and (max-width: 480px) {
+   .hometopdv{
+    display: block;
+   }
+   .hometopdv2{
+    width: 100%;
+    padding:0px;
+   }
+   .rightBar{
+    width: 100%;
+    margin: 30px 0px;
+   }
+   .job_cont{
+    display: block;
+   }
+  }

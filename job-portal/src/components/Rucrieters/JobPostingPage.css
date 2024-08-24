@@ -1,0 +1,64 @@
+/* JobPostingPage.css */
+
+.job-posting-container {
+    max-width: 1200px; /* Increase width for horizontal layout */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-posting-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .job-posting-form {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of form elements */
+    gap: 20px; /* Space between form elements */
+  }
+  
+  .job-posting-form .form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px; /* Flex-grow and basis for responsiveness */
+  }
+  
+  .job-posting-form label {
+    margin-bottom: 5px; /* Space between label and input */
+  }
+  
+  .job-posting-form input,
+  .job-posting-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .job-posting-form textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .job-posting-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .job-posting-form button:hover {
+    background-color: #218838;
+  }
+
+  
+  
