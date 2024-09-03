@@ -1,0 +1,11 @@
+
+.Cont_Added{
+    display:flex;
+    gap: 35px;
+    width:85%;
+    margin:0 auto;
+    flex-wrap:wrap
+}
+.mainh2{
+text-align: center;
+}

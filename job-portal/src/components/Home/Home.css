@@ -4,20 +4,15 @@ body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
   }
-  
 
-  .App {
-    height: 100vh;
-  }
   
 
   .home-container {
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    max-width: 800px;
-    margin: auto;
+    padding: 20px;
+    margin: 0;
   }
 
   .headinghome {
@@ -26,10 +21,11 @@ body {
     margin-bottom: 20px;
   }
   
-  h2 {
+  .popularjheader{
     color: #444;
     font-size: 2rem;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   .headinpara{
@@ -39,7 +35,7 @@ body {
     line-height: 1.5;
   }
   
-  button {
+  .home-container_btn {
     background-color: #007bff;
     color: white;
     border: none;
@@ -48,8 +44,9 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
   }
-  
+ 
   button:hover {
     background-color: #0056b3;
   }
@@ -67,6 +64,7 @@ body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   
   .job_contmap {
@@ -75,23 +73,73 @@ body {
     padding: 10px;
     border-radius: 5px;
     font-size: 1.1rem;
+    width: 160px;
+    height: 121px;
   }
   .hometopdv{
     display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 98%;
    }
   .hometopdv2{
     width: 50%;
     padding:45px 15px;
     margin-bottom:50px,
   }
+  .sponsors {
+    text-align: center;
+    margin: 40px 0;
+  }
   
-  @media screen and (max-width: 480px) {
+  .sponsors h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sponsors-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .sponsors-container img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    margin-top: 40px;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  
+  @media screen and (max-width:600px) {
    .hometopdv{
     display: block;
+   }
+   .home-container_btn_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+   .job_contmap{width: 85%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
    }
    .hometopdv2{
     width: 100%;
     padding:0px;
+    text-align: center;
    }
    .rightBar{
     width: 100%;

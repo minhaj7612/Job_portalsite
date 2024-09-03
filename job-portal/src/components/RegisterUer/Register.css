@@ -43,3 +43,40 @@
 .registerbtn:hover {
     background-color: #0056b3;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .register-container {
+      width: 90%; /* Adjust width for tablets and smaller screens */
+      max-width: 400px; /* Set a max width to ensure form doesn’t stretch too much on large tablets */
+    }
+  
+    .form-group {
+      margin-bottom: 12px; /* Reduce margin for form groups */
+    }
+  
+    .registerbtn {
+      padding: 12px; /* Slightly increased padding for better touch targets */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .register-container {
+        padding: 15px;
+        margin: 30px auto;
+    }
+  
+    .form-group {
+      margin-bottom: 10px; /* Further reduce margin for very small screens */
+    }
+  
+    .registerbtn {
+      padding: 14px; /* Increase padding for better usability on small screens */
+      font-size: 14px; /* Increase font size for readability */
+    }
+  }
+
+  @media (max-width: 250px) {
+    .register-container{
+        padding: 5px;}
+  }

@@ -10,6 +10,7 @@
     display: flex;
     gap: 1rem;
     justify-content: space-evenly;
+    align-items: center;
   }
   
   .filter-input {
@@ -25,6 +26,7 @@
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width:100%;
   }
   
   .secrhbtn {
@@ -40,3 +42,36 @@
     background-color: #0056b3;
   }
   
+  @media (max-width: 768px) {
+    .filter-bar {
+      width: 80%; /* Slightly larger width for mobile devices */
+    }
+  
+    .filter-bar form {
+      flex-direction: column; /* Stack form elements vertically on smaller screens */
+    }
+  
+    .filter-input {
+      width: 100%; /* Ensure inputs take full width */
+    }
+    
+    .filter-input input {
+      margin-bottom: 1rem; /* Add space between inputs */
+    }
+  
+    .secrhbtn {
+      width: 100%; /* Full width for the button on mobile */
+      margin-top: 1rem; /* Space above the button */
+    }
+  }
+  
+  /* For large screens (desktops) */
+  @media (min-width: 1024px) {
+    .filter-bar {
+      width: 70%; 
+    }
+  
+    .filter-bar form {
+      flex-direction: row; 
+    }
+  }

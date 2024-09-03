@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Api from '../../AxiosConfigue';
 import "./Jobs.css"
 import img from "../img/save-instagram.png"
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 import Search from '../Searchbar/Search';
+import { Authcontext } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 
 const Jobs = ({getJobs,setGetJobs}) => {
+  const {state} = useContext(Authcontext);
 
    const routes=useNavigate();
 
@@ -33,10 +36,11 @@ const Jobs = ({getJobs,setGetJobs}) => {
      useEffect(()=>{
       Getjobs();
     },[])
+    
   return (
     <div>
     <Search setGetJobs={setGetJobs}/>
-    <div style={{display:"flex",gap: "35px",width:"85%",margin:"0 auto",flexWrap:"wrap"}}>
+    <div className="JobsMaindiv" style={{display:"flex",gap: "35px",width:"85%",margin:"0 auto",flexWrap:"wrap"}}>
       {getJobs.map((jobs)=>{
       const formattedDate = formatDate(jobs.date);
       return(
@@ -59,13 +63,28 @@ const Jobs = ({getJobs,setGetJobs}) => {
       </div>
       <div className="job-card-body">
         <p className="location">Location: {jobs.location}</p>
-        <p className="salary">Type:  {jobs.jobtype}</p>
+        <p className="salary">Type:{jobs.jobtype}</p>
+       
       </div>
     </div>
     <div className='applysec'>
-      <div className='aply'>
+    <div>
+      <div
+        onClick={() => {
+          if (state?.user) {
+            routes(`/jobform/${jobs._id}`);
+          } else {
+            toast.error("Please log in to apply for jobs."); 
+            routes("/login")
+          }
+        }}
+        className='aply'>
         Apply
       </div>
+    </div>
+  
+
+     
       <div className='detail' onClick={() => routes(`/singleproduct/${jobs._id}`)}>
         Details
       </div>

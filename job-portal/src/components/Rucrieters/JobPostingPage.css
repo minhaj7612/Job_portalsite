@@ -30,8 +30,7 @@
     margin-bottom: 5px; /* Space between label and input */
   }
   
-  .job-posting-form input,
-  .job-posting-form textarea {
+  .job-posting-forminput{
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -39,12 +38,17 @@
     box-sizing: border-box;
   }
   
-  .job-posting-form textarea {
+  .job-posting-formtextarea {
     height: 100px;
     resize: vertical;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
   
-  .job-posting-form button {
+  .job-posting-formbutton {
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -53,12 +57,70 @@
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
-    width: 100%;
   }
   
-  .job-posting-form button:hover {
+  .job-posting-formbutton:hover {
     background-color: #218838;
   }
-
+.job-posting-formbuttonmain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  @media (max-width: 992px) {
+    .job-posting-container {
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
   
+    .job-posting-form {
+      gap: 10px; /* Reduce gap between form elements */
+    }
+  
+    .job-posting-form .form-group {
+      flex: 1 1 100%; /* Stack form groups vertically */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .job-posting-form{
+      display: block;
+      margin: 20px;
+     }
+     .job-posting-forminput{
+      margin: 10px 0px;
+     }
+    .job-posting-forminput,
+    .job-posting-formtextarea {
+      padding: 8px; /* Adjust padding for smaller inputs */
+    }
+  
+    .job-posting-formbutton {
+      padding: 8px;
+      font-size: 14px; /* Reduce font size for smaller buttons */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .job-posting-container {
+      padding: 5px; /* Minimal padding for very small screens */
+    }
+  
+    .job-posting-form {
+      gap: 5px; /* Minimal gap between form elements */
+    }
+  
+    .job-posting-form .form-group {
+      flex: 1 1 100%; /* Full width for form groups on very small screens */
+    }
+  
+    .job-posting-forminput,
+    .job-posting-formtextarea {
+      padding: 6px; /* Small padding for very small screens */
+    }
+  
+    .job-posting-formbutton {
+      padding: 6px;
+      font-size: 12px; /* Further reduce font size */
+    }
+  }
   

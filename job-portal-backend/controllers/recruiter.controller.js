@@ -1,10 +1,12 @@
 import Job from "../model/JobsDetail.model.js";
 
+
 export const JobsDetails = async (req, res) => {
   try {
-    const { jobTitle, jobDescription, location, company, salary, image, date,jobtype } = req.body.formData;
-
-    if (!jobTitle || !jobDescription || !location || !company || !salary || !image || !date|| !jobtype) {
+    const { jobTitle, jobDescription, location, company, salary, image, date, jobtype}=req.body.formData;
+    const{userId}=req.body;
+    
+    if (!jobTitle || !jobDescription || !location || !company || !salary || !image || !date|| !jobtype || !userId) {
       return res.json({ success: false, error: "All fields are required" });
     }
 
@@ -16,7 +18,9 @@ export const JobsDetails = async (req, res) => {
       salary,
       image,
       date,
-      jobtype
+      jobtype,
+      creatorId: userId,
+
     });
 
     const jobsdata = await jobsdesc.save();
@@ -31,7 +35,6 @@ export const JobsDetails = async (req, res) => {
       
       try{
         const jobDetails = await Job.find({});
-        console.log(jobDetails,"jobDetails")
         return res.json({ success:true,jobDetails});
 
        }catch(error){

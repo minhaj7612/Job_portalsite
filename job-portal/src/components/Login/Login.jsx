@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'; 
 import { useNavigate } from 'react-router-dom';
 import Api from '../../AxiosConfigue';
 import toast from 'react-hot-toast';
+import { Authcontext } from '../context/AuthContext';
 
 const Login = () => {
+    const routes=useNavigate();
+    const {state,dispatch}=useContext(Authcontext);
     const [formData, setFormData] = useState({
         email:"",
         password:"",
@@ -29,14 +32,17 @@ const Login = () => {
             const response = await Api.post("/auth/login",{formData})
 
             if(response.data.success){
+            dispatch({type:"LOGIN",payload:response.data.userData})
               setFormData({
-                name: '',
                 email: '',
+                password: '',
               })  
              toast.success(response.data.message)
+             routes("/jobs")
             }
             else{
-            throw Error("All fields are mandatory."); 
+            toast.error(response?.data?.error)
+            // throw Error("All fields are mandatory."); 
             }
         }
           }catch(error){

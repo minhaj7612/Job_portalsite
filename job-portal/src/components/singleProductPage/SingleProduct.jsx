@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Api from '../../AxiosConfigue';
 import "./SingleProduct.css"
 
@@ -9,6 +9,7 @@ const SingleProduct = () => {
     const [loading, setLoading] = useState(false);
     const[jobDetails,setJobDetails] = useState([]);
     const {id}=useParams();
+    const route= useNavigate();
 
     console.log(id,"id")
     console.log(jobDetails,"jobDetails");
@@ -32,7 +33,7 @@ const SingleProduct = () => {
 
        return (
             <div className="single-job-container">
-              <h1>{jobDetails.jobTitle}</h1>
+              <h1 className='single-job-containerHed'>{jobDetails.jobTitle}</h1>
               <div className="job-header">
                 <img src={jobDetails.image} alt={`${jobDetails.company} logo`} className="company-logo2" />
                 <div className="job-info">
@@ -47,7 +48,7 @@ const SingleProduct = () => {
                 <p>{jobDetails.jobDescription}</p>
               </div>
               <div className="apply-section">
-                <a href={jobDetails.applyLink} target="_blank" rel="noopener noreferrer" className="apply-button">Apply Now</a>
+                <a href={jobDetails.applyLink}  onClick={()=>route(`/jobform/${jobDetails._id}`)} target="_blank" rel="noopener noreferrer" className="apply-button">Apply Now</a>
               </div>
             </div>
           )

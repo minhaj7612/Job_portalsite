@@ -1,0 +1,35 @@
+.job-applicants-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .applicants_header{
+    text-align: center;
+    color: #333;
+  }
+  
+  .applicants-table {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .table-header, .table-row {
+    display: contents;
+  }
+  
+  .header-item, .table-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .header-item {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+
+
+  

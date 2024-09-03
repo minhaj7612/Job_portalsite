@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './JobPostingPage.css'; 
 import Api from '../../AxiosConfigue';
 import toast from 'react-hot-toast';
+import { Authcontext } from '../context/AuthContext';
 
 const JobPostingPage = () => {
+  const {state} = useContext(Authcontext)
   const [formData, setFormData] = useState({
     jobTitle: '',
     location: '',
@@ -27,9 +29,13 @@ const JobPostingPage = () => {
     e.preventDefault();
     try {
       if (formData.jobTitle && formData.location && formData.company &&
-        formData.salary && formData.jobDescription && formData.image && formData.date && formData.jobtype){
+        formData.salary && formData.jobDescription && formData.image && 
+        formData.date && formData.jobtype){
         
-        const response = await Api.post("/recruiter/Post-job-deatil", { formData });
+        const response = await Api.post("/recruiter/Post-job-deatil", {formData,
+          userId:state?.user?.userId
+         }
+        );
 
         if (response.data.success) {
           setFormData({
@@ -61,7 +67,7 @@ const JobPostingPage = () => {
         <div className="job-posting-form">
           <label>
             Job Title:
-            <input
+            <input className='job-posting-forminput'
               type="text"
               name="jobTitle"
               value={formData.jobTitle}
@@ -71,7 +77,7 @@ const JobPostingPage = () => {
           </label>
           <label>
             Location:
-            <input
+            <input className='job-posting-forminput'
               type="text"
               name="location"
               value={formData.location}
@@ -81,7 +87,7 @@ const JobPostingPage = () => {
           </label>
           <label>
             Company:
-            <input
+            <input className='job-posting-forminput'
               type="text"
               name="company"
               value={formData.company}
@@ -91,7 +97,7 @@ const JobPostingPage = () => {
           </label>
           <label>
             Salary:
-            <input
+            <input className='job-posting-forminput'
               type="text"
               name="salary"
               value={formData.salary}
@@ -101,7 +107,7 @@ const JobPostingPage = () => {
           </label>
           <label>
             Image URL:
-            <input
+            <input className='job-posting-forminput'
               type="url"
               name="image"
               value={formData.image}
@@ -110,7 +116,7 @@ const JobPostingPage = () => {
           </label>
           <label>
             Job Posting Date:
-            <input
+            <input className='job-posting-forminput'
               type="date"
               name="date"
               value={formData.date}
@@ -119,7 +125,7 @@ const JobPostingPage = () => {
           </label>
           <label>
             Job Type:
-            <input
+            <input className='job-posting-forminput'
               type="text"
               name="jobtype"
               value={formData.jobtype}
@@ -128,7 +134,7 @@ const JobPostingPage = () => {
           </label>
           <label>
             Job Description:
-            <textarea
+            <textarea className='job-posting-formtextarea'
               name="jobDescription"
               value={formData.jobDescription}
               onChange={handleChange}
@@ -136,7 +142,10 @@ const JobPostingPage = () => {
             />
           </label>
         </div>
-        <button type="submit">Post Job</button>
+        <div className='job-posting-formbuttonmain'>
+        <button className="job-posting-formbutton" type="submit">Post Job</button>
+        </div>
+      
       </form>
     </div>
   );

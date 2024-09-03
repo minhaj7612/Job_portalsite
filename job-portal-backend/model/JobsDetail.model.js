@@ -1,4 +1,4 @@
-import { Schema,model } from "mongoose"
+import mongoose, { Schema,Types,model } from "mongoose"
 
 
 
@@ -10,7 +10,8 @@ const jobsdetail= new Schema({
     salary: Number,
     image:String,
     jobtype:String,
-    date:Date
+    date:Date,
+    creatorId: {type:mongoose.Schema.Types.ObjectId, ref: "JobPadmin" },
 })
 
 const Job = model("Jobs",jobsdetail);

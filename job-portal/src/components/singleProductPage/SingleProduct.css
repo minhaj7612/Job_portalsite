@@ -44,3 +44,87 @@
     background-color: #0056b3;
   }
   
+
+  @media (max-width: 1200px) {
+    .single-job-container {
+      margin: 2% 5%; /* Reduce margin for medium screens */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .single-job-container {
+      margin: 2% 3%; /* Reduce margin for smaller screens */
+      padding: 2%; /* Keep padding consistent */
+    }
+  
+    .job-header {
+      flex-direction: column; /* Stack header items vertically on smaller screens */
+      align-items: flex-start; /* Align items to the start for better spacing */
+    }
+  
+    .company-logo2 {
+      width: 80px; /* Adjust logo size for smaller screens */
+    }
+  
+    .apply-button {
+      padding: 8px 16px; /* Reduce padding for smaller buttons */
+      font-size: 14px; /* Adjust font size */
+    }
+  }
+
+  /* responsive css */
+  
+  @media (max-width: 768px) {
+    .single-job-container {
+      margin: 5% 2%;
+      padding: 3%;
+    }
+    .single-job-containerHed{
+       text-align: center;
+       font-size: 25px;
+    }
+  
+    .job-header {
+      flex-direction: column; /* Stack header items vertically */
+      align-items: center; /* Center-align items */
+      text-align: center; /* Center-align text */
+    }
+  
+    .company-logo2 {
+      width: 60px; /* Further reduce logo size for mobile devices */
+    }
+  
+    .job-description {
+      margin-top: 15px; /* Reduce top margin for description */
+    }
+  
+    .apply-button {
+      padding: 8px 14px; /* Adjust button padding for mobile */
+      font-size: 13px; /* Further reduce font size */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .single-job-container {
+      margin: 3% 5%;
+      padding: 3% ;
+    }
+  
+    .job-header {
+      flex-direction: column; /* Ensure header items stack vertically */
+      align-items: center; /* Center-align items */
+    }
+  
+    .company-logo2 {
+      width: 50px; /* Small logo size for very small screens */
+    }
+  
+    .job-description {
+      margin-top: 10px; /* Minimal margin for description */
+    }
+  
+    .apply-button {
+      padding: 6px 12px; /* Small padding for mobile buttons */
+      font-size: 12px; /* Small font size */
+    }
+  }

@@ -10,4 +10,5 @@ router.post("/get-single-job-deatil",GetsingleJobsDetails)
 router.post("/search",SearchJobs)
 
 
+
 export default router;
