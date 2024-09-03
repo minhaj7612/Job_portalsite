@@ -53,15 +53,7 @@ const UserProfile = ({ updateData, setUpdateData }) => {
   console.log(updateData,"updateData")
   const navigate = useNavigate();
   const { state } = useContext(Authcontext);
-  console.log(state)
-  const [userInfo, setUserInfo] = useState(null); // Initialize as null
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
   
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
 
   return (
     <div className='userProfileMainPage'>
@@ -72,13 +64,6 @@ const UserProfile = ({ updateData, setUpdateData }) => {
             <img src={profilepic} alt="Profile" />
             <h3>{state?.user?.name}</h3>
             <span onClick={() => navigate("/editProfile")}>Edit</span>
-          </div>
-          <div>
-            {updateData && updateData.map((update, index) => (
-              <div key={index}>
-                <p>{update.phone}</p>
-              </div>
-            ))}
           </div>
         </div>
         <div className='userProfile_right'>
