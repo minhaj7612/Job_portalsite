@@ -1,5 +1,5 @@
 import JobPuser from "../model/JobPuser.model.js"
-import bcrypt from 'bcrypt'; 
+import bcrypt from "bcryptjs" 
 import jwt from "jsonwebtoken";
 import JobPadmin from "../model/JobPadmin.model.js";
 import Application from "../model/Jobapplication.model.js";

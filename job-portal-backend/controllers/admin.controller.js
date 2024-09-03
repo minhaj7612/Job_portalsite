@@ -1,6 +1,6 @@
 import JobPadmin from "../model/JobPadmin.model.js";
 import jwt from "jsonwebtoken";
-import bcrypt from 'bcrypt'; 
+import bcrypt from "bcryptjs" 
 import Job from "../model/JobsDetail.model.js";
 import Application from "../model/Jobapplication.model.js";
 
