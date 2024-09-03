@@ -2,7 +2,7 @@ import axios from "axios";
 
 const Api = axios.create(
     {
-        baseURL:"http://localhost:9000/api/v6",
+        baseURL:"https://job-portalsite.onrender.com//api/v6",
         withCredentials:true,
     }
 )
